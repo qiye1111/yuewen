@@ -1,0 +1,41 @@
+*{
+    margin:0;padding:0;
+}
+.top-nav {
+    background:#f7f7f7;
+    font-size:0.5rem;
+}
+.top-nav ul li a,.top-nav .pt-2 a{
+    color:#8e8e8e;
+    text-decoration: none;
+}
+.top-nav ul li a:hover{
+    color:#f00;
+}
+.top-nav .pt-2 a:hover{
+    font-weight: bold;
+    color:#b21f2d;
+    font-size:0.8rem;
+}
+.top-search{
+    margin:0 auto;
+}
+/*pc端*/
+@media screen and (min-width:992px){
+
+}
+/*pad端*/
+@media screen and (max-width:992px) and (min-width:768px){
+    .top-search:first-child{
+
+    }
+}
+/*phone端*/
+@media screen and (max-width:768px){
+.top-nav{
+    display: none;
+}
+.container div.col-lg-6 .mt-2 a img{
+    display:none;
+}
+}
