@@ -8,30 +8,372 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="../css/index.css">
+    <script>
+        $(function(){
+            new ZoomPic(".ywBookShow");
+        })
+    </script>
 </head>
 <body>
-<div class="container">
+
 <!--折叠导航栏-->
-    <div class="col-lg-10">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a href="#" class="navbar-brand">阅文集团</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#"><span class="navbar-toggler-icon"></span></button>
+    <div class="row bg-dark">
+        <nav class="navbar navbar-expand-sm  navbar-dark m-auto">
+            <a href="#" class="navbar-brand font-large">阅文集团</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#content"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse " id="content">
+                <ul class="navbar-nav">
+                    <li class="nav-item ml-3"><a href="#" class="nav-link my_font">全版权运营</a></li>
+                    <li class="nav-item ml-3"><a href="#" class="nav-link my_font">移动产品</a></li>
+                    <li class="nav-item ml-3"><a href="#" class="nav-link my_font">旗下品牌</a></li>
+                    <li class="nav-item ml-3"><a href="#" class="nav-link my_font">投资者关系</a></li>
+                    <li class="nav-item ml-3"><a href="#" class="nav-link my_font">新闻中心</a></li>
+                    <li class="nav-item ml-3"><a href="#" class="nav-link my_font">联系我们</a></li>
+                </ul>
+            </div>
         </nav>
-        <div class="navbar-collapse collapse" id="#content">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="" class="nav-link">全版权运营</a></li>
-                <li class="nav-item"><a href="" class="nav-link">移动产品</a></li>
-                <li class="nav-item"><a href="" class="nav-link">旗下品牌</a></li>
-                <li class="nav-item"><a href="" class="nav-link">投资者关系</a></li>
-                <li class="nav-item"><a href="" class="nav-link">新闻中心</a></li>
-                <li class="nav-item"><a href="" class="nav-link">联系我们</a></li>
+    </div>
+    <!--轮播图-->
+    <div class="carousel" data-ride="carousel" id="demo" data-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../img/index-1.jpg" class="w-100">
+                <div class="carousel-caption m-auto">
+                    <h1>数字阅读，文创未来</h1>
+                    <P class="font-large">引领行业的正版数字阅读平台和文学 IP 培育平台</P>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/index-2.jpg" class="w-100">
+                <div class="carousel-caption m-auto">
+                    <h1>以梦为马，不负韶华</h1>
+                    <P class="font-large">加入阅文，携手共铸文学梦</P>
+                    <a href="#" class="border p-1 font-large">了解更多</a>
+                </div>
+            </div>
+        </div>
+        <ul class="carousel-indicators">
+            <li class="active" data-target="#demo" data-slide-to="0"></li>
+            <li class="" data-target="#demo" data-slide-to="1"></li>
+        </ul>
+    </div>
+    <!-- 阅文-->
+    <div id="floor-one">
+        <div class="row f-one-top mt-5 my_font">
+            <div class="col-lg-3 text-center"></div>
+            <div class="col-lg-6 col-sm-12">
+                <p class="text-center">阅文集团旗下囊括 QQ 阅读、起点中文网等业界知名品牌，</p>
+                <p class="text-center">拥有上千万部作品储备、730 万名创作者，覆盖 200 多种内容品类，</p>
+                <p class="text-center">占据国内 IP 改编市场优势份额，成功输出《鬼吹灯》、《盗墓笔记》、</p>
+                <p class="text-center">《琅琊榜》、《择天记》等大量优秀改编作品。</p>
+                <hr class="w-25 m-auto">
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class=" row f-one-bottom">
+             <div class='col-lg-3 col-sm-6'>
+                 <div class="m-5">
+                     <img src="../img/icons-1.png" alt="#" class="img-responsive center-block"/>
+                     <p class="text-center ">730万作家</p>
+                     <p class="text-center ">完善的作家孵化和培养体系，打造作家、读者、平台互生共荣的文化生态体系。</p>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-sm-6">
+                 <div class="m-5">
+                    <img src="../img/icons-2.png" alt="#" class="img-responsive center-block"/>
+                    <p class="text-center">上千万部作品</p>
+                    <p class="text-center">原创小说已覆盖行业半壁江山，覆盖200多种内容品类。</p>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-sm-6">
+                 <div class="m-5">
+                     <img src="../img/icons-3.png" alt="#" class="img-responsive center-block"/>
+                     <p class="text-center">数亿活跃用户</p>
+                     <p class="text-center ">以 QQ 阅读为中心，包罗网络原创、传统出版、音频听书等品牌功能的多元产品矩阵。</p>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-sm-6">
+                 <div class="m-5">
+                     <img src="../img/icons-4.png" alt="#" class="img-responsive center-block"/>
+                     <p class="text-center">深受用户欢迎</p>
+                     <p class="text-center ">QQ 阅读入选了 QuestMobile 发布的 "2017年度中国移动互联网用户粘性TOP10行业NO.1 APP"</p>
+                 </div>
+             </div>
+        </div>
+    </div>
+    <!-- 全版权运营-->
+    <div id="floor-two">
+        <div class="yw-book-x">
+            <span class="text-center">全版权运营</span>
+            <div class="yw-copy-xx">
+                <ul class="yw-copy-center yw-line-one"></ul>
+            </div>
+            <div class="yw-copy-xx">
+                <ul class="yw-copy-center yw-line-two">
+                    <li>123456</li>
+                </ul>
+            </div>
+            <div class="yw-copy-xx">
+                <ul class="yw-copy-center yw-line-three"></ul>
+            </div>
+            <i class="yw-book-back-one"></i>
+            <i class="yw-book-back-two"></i>
+        </div>
+        <div class="ywBookShow">
+            <img src="../img/bubujingxin.jpg" class="yw-book-pic"/>
+            <img src="../img/daomubiji.jpg" alt=""/>
+            <img src="../img/doupocangqiong.jpg" alt=""/>
+            <img src="../img/fuyao.jpg" alt=""/>
+            <img src="../img/guichuideng.jpg" alt=""/>
+            <img src="../img/jiangye.jpg" alt=""/>
+            <img src="../img/langyabang.jpg" alt=""/>
+            <img src="../img/lingjianshan.png" alt=""/>
+            <img src="../img/minyuezhuan.jpg" alt=""/>
+            <img src="../img/quanzhigaoshou3.jpg" alt=""/>
+            <img src="../img/shengxu.jpg" alt=""/>
+            <img src="../img/wudongqiankun.jpg" alt=""/>
+            <img src="../img/yinianyongheng.jpg" alt=""/>
+            <img src="../img/zetianji.jpg" alt=""/>
+            <img src="../img/zhuxian.jpg" alt=""/>
+        </div>
+        <ul class="ywBookMsg">
+            <li class="yw-book-msgp">
+                《步步惊心》是作家桐华创作的穿越小说。同名改编的电视剧于2012年在湖南卫视上映并在中日韩同时热播，荣获2012年第七届首尔国际电视节最佳海外电视剧大奖，并于2016年再度翻拍成《步步惊心：丽》。
+            </li>
+            <li class="yw-book-msgp">
+                《盗墓笔记》最初连载于起点中文网，是南派三叔成名代表作。2015年网剧开播首日点击破亿，开启了盗墓文学 IP 年。电影于2016年上映，由井柏然、鹿晗、马思纯等主演，累计票房10亿元。
+            </li>
+            <li class="yw-book-msgp">
+                《斗破苍穹》是天蚕土豆首发于起点中文网的古装玄幻小说。其改编的动漫、游戏均广受欢迎，同名电视剧也即将上映。电影由万达影业、腾讯影业和阅文集团联合打造，将于2018年上映。
+            </li>
+            <li class="yw-book-msgp">《扶摇皇后》是阅文集团旗下潇湘书院金牌女作家天下归元的经典力作，该作在连载期间，屡屡打破网站古言类作品订阅纪录，点击量超百亿，收藏量达数十万。改编电视剧《扶摇》于2018年播出 。</li>
+            <li class="yw-book-msgp">
+                《鬼吹灯》是天下霸唱创作的经典悬疑盗墓小说，连载于起点中文网。先后进行过漫画、游戏、电影、网络电视剧的改编，均取得不俗的成绩，是当之无愧的超级IP。
+            </li>
+            <li class="yw-book-msgp">
+                《将夜》是阅文白金作家猫腻的第四部玄幻小说，首发于起点中文网。同名改编古装电视剧将于2018年上映，腾讯影业、阅文集团参与出品。
+            </li>
+            <li class="yw-book-msgp">
+                《琅琊榜》是首发在起点女生网上的一本架空权谋类小说，作者海宴。改编电视剧2015年播出后，口碑收视双红，胡歌饰演的梅长苏等角色深入人心。
+            </li>
+            <li class="yw-book-msgp">
+                《从前有座灵剑山》是国王陛下在创世中文网连载的仙侠类小说。2014年由腾讯动漫改编漫画，2016年由 Studio DEEN 制作动画并在日本播出，成为国漫创新之作。
+            </li>
+            <li class="yw-book-msgp">
+                《芈月传》是蒋胜男的原创小说，电子版由阅文独家首发。小说进行了电视剧、游戏等多种形式的改编，一度掀起芈月热潮。
+            </li>
+            <li class="yw-book-msgp">
+                《全职高手》最初连载于起点中文网，是阅文白金作家蝴蝶蓝的封神之作。改编动漫受到热捧，在腾讯视频播放量超10亿，成为2017国漫标杆。
+            </li>
+            <li class="yw-book-msgp">
+                《圣墟》是阅文集团白金作家辰东所著的第六部小说，2016年首发于起点中文网和创世中文网。一经推出，各大公司就争相了解版权情况，目前同名游戏火热上线中。
+            </li>
+            <li class="yw-book-msgp">
+                《武动乾坤》自2011年于起点中文网连载起，便常居起点热销榜前列，目前全网点击量达数十亿，积累了大量的读者粉丝。同名改编电视剧由阅文集团携手深蓝影业、优酷等联合出品，2018年在东方卫视周播剧场首播，并在优酷视频同步播出。
+            </li>
+            <li class="yw-book-msgp">
+                《一念永恒》是阅文白金作家耳根在起点中文网的又一力作，新书提笔不久便吸引一响天开影业掷千万重金夺下影视版权。在影游联动的互助驱动下，其游戏改编权的市场价值有望再刷新高。
+            </li>
+            <li class="yw-book-msgp">
+                《择天记》于创世中文网首发，是阅文白金作家猫腻的第五部玄幻作品。作为阅文重点 IP，进行了影视、游戏、动漫的联合开发，成为阅文集团全版权运营的标杆之作。
+            </li>
+            <li class="yw-book-msgp">
+                《诛仙》是阅文大神作家萧鼎的经典作品，文风干练，辞藻唯美。2016年改编电视剧《诛仙：青云志》上映，还原著粉十年「诛仙梦」。
+            </li>
+        </ul>
+    </div>
+    <!-- 移动产品-->
+    <div class="yw-moblie" id="floor-three">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="tabApp">
+                    <a href="javascript:" >QQ阅读</a>
+                    <a href="javascript:" >起点读书</a>
+                    <a href="javascript:" >作家助手</a>
+                    <a href="javascript:" >起点国际</a>
+                    <a href="javascript:" >红袖读书</a>
+                </div>
+
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <ul class="yw-tab-panel">
+                    <li id="tabpanel1">
+                        <div class="yw-app-desc">
+                            <h3 class="yw-app-slogon yw-slogon-qq"></h3>
+                            <p class="yw-app-desc-detail">海量原著，想读就读。个性推荐，拥有你的专属书城；精致排版，感受个性阅读体验。</p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                        <div class="yw-app-img-x">
+                            <img src="../img/qq-new.png" alt="">
+                        </div>
+                    </li>
+                    <li id="tabpanel2">
+                        <div class="yw-app-desc">
+                            <h3 class="yw-app-slogon yw-slogon-qd"></h3>
+                            <p class="yw-app-desc-detail">看原创正版小说，追大神作家；广大读者的选择，百万作家在此创作；热门影视、游戏 IP 发源地。</p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                        <div class="yw-app-img-x">
+                            <img src="../img/qd-new.png" alt="">
+                        </div>
+                    </li>
+                    <li id="tabpanel3">
+                        <div class="yw-app-desc">
+                            <h3 class="yw-app-slogon yw-slogon-zj"></h3>
+                            <p class="yw-app-desc-detail">随身记录乍现灵感，发布专属自己的作品，与数亿读者分享你的故事。</p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                        <div class="yw-app-img-x">
+                            <img src="../img/zj-new.png" alt="">
+                        </div>
+                    </li>
+                    <li id="tabpanel4">
+                        <div class="yw-app-desc">
+                            <h3 class="yw-app-slogon yw-slogon-wbn"></h3>
+                            <p class="yw-app-desc-detail">面向全球的网络文学阅读与原创平台.</p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                        <div class="yw-app-img-x">
+                            <img src="../img/wbn-new.png" alt="">
+                        </div>
+                    </li>
+                    <li id="tabpanel5">
+                        <div class="yw-app-desc">
+                            <h3 class="yw-app-slogon yw-slogon-hx"></h3>
+                            <p class="yw-app-desc-detail">女频 IP 抢先看，女生爱看的小说都在这。</p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                        <div class="yw-app-img-x">
+                            <img src="../img/hx-new.png" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+    <!-- 旗下品牌-->
+    <div id="brand">
+        <div class="yw-constr">
+            <h3>旗下品牌</h3>
+            <div id="brandNavX">
+                <a href="//www.qidian.com" target='_blank' title="起点中文网" data-index="0">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="创世中文网" data-index="1">创世中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="云起书院" data-index="2">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="红袖添香" data-index="3">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="潇湘书院" data-index="4">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="起点女生网" data-index="5">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="小说阅读网" data-index="6">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="言情小说吧" data-index="7">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="天方听书网" data-index="8">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="懒人听书" data-index="9">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="QQ阅读" data-index="10">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="起点读书" data-index="11">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="作家助手" data-index="12">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="WEBNOVEL" data-index="13">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="红袖读书" data-index="14">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="元气阅读" data-index="15">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="中智博文" data-index="16">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="聚石文华" data-index="17">起点中文网</a>
+                <a href="//www.qidian.com" target='_blank' title="华文天下" data-index="18">起点中文网</a>
+            </div>
+            <ul id="brandDescX">
+                <li class="yw-brand-desc-li out">
+                    <p>起点中文网创建于2002年5月，是国内引领行业的原创文学门户网站和写作平台，<br>
+                        隶属于数字阅读综合平台——阅文集团。起点中文网前身为起点原创文学协会，<br>
+                        长期致力于原创文学作者的挖掘与培养工作，并以推动中国文学原创事业为发展宗旨，<br>
+                        并以此为契机开创了在线收费阅读即电子出版的新模式。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>创世中文网成立于2013年，是由资深网络文学团队精心打造的集阅读、创作、互动社区、版权运营于一体的全开放网络文学平台。依托阅文集团，基于团队经验和影响力以及旗下大批知名网络作家，致力于推进网络文学泛娱乐运营、用户阅读和互动体验、原创扶持力度的升级，成为网络文学行业格局的主要变革者。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>云起书院是引领行业的女性文学创作基地，成就无数平民作者的文学梦想。作为网络文学产业的重要细分市场，女性文学有着巨大的市场想象空间。云起书院将肩负起打造全新女性文学产业生态的重任，基于腾讯强大的资源平台和运营体系，促进中国女性文学市场的健康、持续发展，迎接“全民阅读”时代的到来。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>红袖添香创办于1999年，国内引领行业的女性文学数字版权运营商。 红袖添香为用户提供涵盖小说、散文、杂文、诗歌、歌词、剧本、日记等体裁的高品质创作和阅读服务，在言情、职场小说等女性文学写作及出版领域具有巨大影响力。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>潇湘书院一直以做中国最好的女生原创网站为目标，立志为广大的原创作者提供一个公平、公正、健康的文学发展平台。优秀的工作团队和人性化的管理模式，使潇湘书院成为女性原创作者群体以及读者群体中具备强大吸引力和归属感的原创网站。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>起点女生网成立于2009年11月，其前身是「起点女生频道」，致力于对女性网络原创文学及作者的培养和挖掘。起点女生网依托起点中文网的成熟运作机制，成功实现了女性网络原创文学的商业化发展模式。囊括了《步步惊心》、《搜索》、《毒胭脂》等多部热门影视剧的原著小说版权。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>小说阅读网是国内优质文学版权运营商，网站拥有海量原创作品、签约作家、签约编剧及用户群，自 2009 年 4 月新版上线、开通 VIP 系统以来，打造出数部点击过亿的超人气签约作品，迅速创下单部作品点击逾两亿、单章订阅超三万、月稿酬收入过六万等各项辉煌记录，缔造出白金高薪网络作家十多人，月薪过万作家一百五十多人。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>言情小说吧成立于2005年，从建立之初至今，一直秉承着为用户提供优质的言情小说阅读体验平台，打造全球华语言情小说阅读基地的理念，在网络文学界走出了一条专业化的独特发展道路。言情小说吧拥有人气超高的论坛、方便快捷的网游以及站内家园等，能给用户提供读书、休闲、娱乐的多方位体验。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>天方听书网创建于2004年，经过多年的运营和发展，已经成为国内引领行业的听书网站。天方听书网专注于有声读物的研发和市场运作，为广大听友提供时尚前沿的听书资讯和听书内容。网站内容涉及经济管理、中外文学、古典文学、现代文学、儿童文学、探案悬疑、科幻文学、百科知识等近20个大类。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>懒人听书成立于2012年，专注移动互联网有声数字领域，立足移动音频行业，为用户提供所需的书籍节目以及有声数字交流服务等高品质内容。 上线至今，懒人听书始终坚持产品第一、用户至上，不断优化产品，丰富平台资源，形成多项行业优势，业已成为移动音频行业优质品牌。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>最早始于 WAP 版 QQ书城的 QQ阅读，早在前智能手机年代就积累了大量用用户基础。有着优良用户体验和海量原创作品的QQ阅读早已覆盖 iOS 、Android 等主流移动设备，是目前市面上广受用户欢迎的移动读书软件。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>起点读书是起点中文网首创「在线收费阅读」服务的移动应用，原创作家与读者在此互动创作，10 年来大神作家群星璀璨，积累了数百万部优秀原创作品。让亿万书友在 iOS、Android 等移动设备随时随地，畅享阅读。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>作家助手是阅文集团诚意打造的一款移动创作应用，覆盖 Android、iOS 等主流移动平台，凭借流畅的用户体验、强大的创作工具、可视化的统计分析等优势，迅速成为市场上深受作家喜爱的移动创作应用之一。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>Webnovel作为阅文全球化策略的重要产品，提供高质量的英文虚构小说内容给全球英文读者。全面覆盖各个终端，除了优秀体验的网页以外，也一如既往的为 iOS 和 Android 等主流移动设备提供服务，是优秀的英文网文内容平台。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>自千禧年来，红袖一直致力于为用户提供原创作品，并成为孕育中国原创文化的沃土，成功打造出多部诸如《裸婚》、《欢乐颂》、《萌妻食神》等一批高质量的IP作品。而经红袖精心开发出的红袖读书APP，兼顾优良的用户体验以及海量的书城作品两大特色，已覆盖iOS以及Android等主流移动设备，当前在女性阅读市场独占鳌头。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>元气阅读创建于2018年3月，是国内领先的二次元网络文学网站，隶属于数字阅读综合平台--阅文集团。元气阅读以推动中国二次元文学事业为宗旨，长期致力于二次元文学的挖掘与培养，并取得了巨大成就。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>中智博文图书有限公司成立于2003年，是一家专业从事图书策划、营销推广和发行代理的民营图书企业。公司以高品质、高效率、高市场敏锐度和实用性、艺术性相结合的原则，成功策划、出版发行了上千种图书品种，内容涵盖史地文化、少儿百科、经管励志、健康生活、学生读物、世界名著等诸多方面。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                    <p>聚石文华的运营团队以专业出版策划人为主体，汇集行业精英凝聚而成；公司的整体运作主要包括图书的策划出版及发行 ，立志于为出版市场提供卓越的文学作品。自筹备阶段起，聚石文华已然洽谈并签约数名国内一流作家新作；并携手搜狐、腾讯、新浪、起点、晋江、红袖、四月天、17K等原创文学网站搭建出版文学的战略合作平台。</p>
+                </li>
+                <li class="yw-brand-desc-li out">
+                <p>天津华文天下图书有限公司成立于2001年，是中国民营书业具有深远影响力的公司之一。公司策划了大量优秀畅销图书。其中多本图书单品销量超过百万册，在版权引进和国内原创作家的打造上，探索出一整套畅销书运营模式。</p>
+                </li>
             </ul>
         </div>
     </div>
-    <div class="col-lg-2">
+    <!-- 投资者关系-->
+    <!-- 新闻中心-->
+    <!--联系我们-->
+    <div id="contact" class="row">
+        <div class="col-md-4 col-sm-12">
+            <img src="../img/index-logo.png" alt="阅文集团">
+            <p class="contact-msg">北京 上海 杭州</p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <h5>联系我们</h5>
+                    <div class="contact-item">
 
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12"></div>
+                <div class="col-md-4 col-sm-12"></div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-12"></div>
     </div>
-</div>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/>
+
 </body>
 </html>

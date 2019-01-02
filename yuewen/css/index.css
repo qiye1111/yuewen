@@ -1,4 +1,179 @@
 *{
     margin:0;
     padding:0;
+    font-size:16px;
 }
+.font-large{
+    font-size:1.2rem;
+}
+.my_font{
+    font-size:0.8rem;
+}
+div.carousel  div.carousel-caption a{
+    text-decoration: none;
+    color:#fff;
+}
+#floor-one .f-one-top div p{
+    font-size:1.2rem;
+    font-family: Lato,'Helvetica Neue','PingFang SC','Myriad Pro','Hiragino Sans GB','microsoft yahei';
+    color: #3e4652;
+}
+#floor-one .f-one-top div:first-child{
+    background:url('../img/arr-left.png') no-repeat ;
+    background-size:20% 35%;
+    background-position: right center;
+}
+#floor-one .f-one-top div:last-child{
+    background:url('../img/arr-right.png') no-repeat ;
+    background-size:20% 35%;
+    background-position: left center;
+}
+#floor-one .f-one-bottom div img{
+    text-align: center;
+}
+.img-responsive {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+.center-block{
+    display:block;
+    margin:0 auto;
+}
+#floor-one .f-one-bottom .m-5 p:nth-child(2){
+    color:#007bff;
+}
+#floor-two .yw-book-x{
+    position:relative;
+}
+#floor-two .yw-book-x span{
+   position:absolute;
+    font-size:1.8rem;
+    z-index: 1;
+    font-weight: 800;
+    color:#fff;
+    left:45%;
+    top:13%;
+}
+
+#floor-two .yw-book-x .yw-copy-xx{
+    width:100%;
+    height:140px;
+    overflow: hidden;
+
+}
+#floor-two .yw-book-x .yw-copy-xx ul{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width:2648px;
+}
+#floor-two .yw-line-one{
+    height:140px;
+    background:url(../img/book-line1.png) repeat-x;
+    animation: moveSlideshow 20s linear infinite;
+}
+
+#floor-two .yw-line-two{
+    height:140px;
+    background:url(../img/book-line3.png) repeat-x;
+    animation: moveSlideshow 40s linear infinite;
+}
+#floor-two .yw-line-three{
+    height:140px;
+    background: url(../img/book-line4.jpg) repeat-x;
+   animation: moveSlideshow 60s linear infinite;
+}
+@keyframes moveSlideshow {
+    100% {
+        transform: translateX(-50%);
+    }
+}
+#floor-two .yw-book-x .yw-book-back-one{
+    display:block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:420px;
+    background-color:rgba(33,34,35,.8) ;
+}
+#floor-two .ywBookShow {
+    position:relative;
+    width:100%;
+    height:20%;
+    transform-style: preserve-3d;
+    z-index:1;
+    margin-top:-4%;
+}
+#floor-two .ywBookShow img{
+/*object-fit: cover;*/
+/*position:absolute;*/
+/*transition: .8s ease-in-out;*/
+/*box-shadow: 0 6px 16px  rgba(0,0,0,.5);*/
+/*border-radius: 4px;*/
+}
+
+
+#floor-two .yw-copy-center {
+margin-bottom:0;
+}
+#floor-two .ywBookShow img{
+width:10%;
+height:6%;
+object-fit: cover;
+transition: .8s ease-in-out;
+box-shadow: 0 6px 16px  rgba(0,0,0,.5);
+ border-radius: 4px;
+}
+
+
+
+
+/*pc端*/
+@media screen and (min-width: 992px){
+    div.carousel  div.carousel-caption h1{
+        font-size:3.2rem;
+    }
+    div.carousel  div.carousel-caption p{
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+
+}
+/*pad端*/
+@media screen and (max-width: 991px) and (min-width: 768px){
+    .my_font{
+        font-size:0.6rem;
+    }
+    .font-large{
+        font-size:1.1rem;
+    }
+}
+/*手机端*/
+@media screen and (max-width: 767px){
+    .my_font{
+        font-size:0.4rem;
+    }
+    div.carousel  div.carousel-caption h1{
+        font-size:1.5rem;
+    }
+    .font-large{
+        font-size:0.6rem;
+    }
+    div.carousel  div.carousel-caption a{
+        display:none;
+    }
+    #floor-one .f-one-top div p{
+        font-size:0.5rem;
+        font-family: Lato,'Helvetica Neue','PingFang SC','Myriad Pro','Hiragino Sans GB','microsoft yahei';
+        color: #3e4652;
+    }
+    #floor-two .yw-book-x span{
+        left:36%;
+
+    }
+}
+
+
+
