@@ -1,71 +1,240 @@
-function ZoomPic(){
-    this.initialize.apply(this,arguments
-    )}
-ZoomPic.prototype={initialize:function(id){
-    var _this=this;
-    this.wrap=typeof id==="string"?document.getElementById(id):id;
-    this.oUl=this.wrap.getElementsByTagName("ul")[0];
-    this.aLi=this.wrap.getElementsByTagName("li");
-    this.prev=this.wrap.getElementsByTagName("pre")[0];
-    this.next=this.wrap.getElementsByTagName("pre")[1];
-    this.timer=null;this.aSort=[];this.iCenter=3;
-    this._doPrev=function(){return _this.doPrev.apply(_this)};
-    this._doNext=function(){return _this.doNext.apply(_this)};
-    this.options=[
-        {width:262,height:389,top:152,left:0,zIndex:1},
-        {width:262,height:389,top:152,left:0,zIndex:2},
-        {width:262,height:389,top:152,left:200,zIndex:3},
-        {width:300,height:445,top:124,left:388,zIndex:4},
-        {width:262,height:389,top:152,left:668,zIndex:3},
-        {width:262,height:389,top:152,left:834,zIndex:2},
-        {width:262,height:389,top:152,left:450,zIndex:1},
-    ];
-    for(var i=0;i<this.aLi.length;i++)
-        this.aSort[i]=this.aLi[i];
-    this.aSort.unshift(this.aSort.pop());
-        this.setUp();
-        this.addEvent(this.prev,"click",this._doPrev);
-        this.addEvent(this.next,"click",this._doNext);
-        this.doImgClick();
-        this.timer=setInterval(function(){_this.doNext()},3000);
-        this.wrap.onmouseover=function(){clearInterval(_this.timer)};
-        this.wrap.onmouseout=function(){_this.timer=setInterval(function()
-    {_this.doNext()},3000);}},doPrev:function()
-    {this.aSort.unshift(this.aSort.pop());this.setUp()},doNext:function()
-    {this.aSort.push(this.aSort.shift());this.setUp()},doImgClick:function()
-    {var _this=this;for(var i=0;i<this.aSort.length;i++)
-    {this.aSort[i].onclick=function()
-    {if(this.index>_this.iCenter)
-    {for(var i=0;i<this.index-_this.iCenter;i++)_this.aSort.push(_this.aSort.shift());_this.setUp()}
-    else if(this.index<_this.iCenter)
-    {for(var i=0;i<_this.iCenter-this.index;i++)_this.aSort.unshift(_this.aSort.pop());_this.setUp()}}}},setUp:function()
-    {var _this=this;var i=0;for(i=0;i<this.aSort.length;i++)this.oUl.appendChild(this.aSort[i]);for(i=0;i<this.aSort.length;i++)
-    {this.aSort[i].index=i;if(i<7)
-    {this.css(this.aSort[i],"display","block");this.doMove(this.aSort[i],this.options[i],function()
-    {_this.doMove(_this.aSort[_this.iCenter].getElementsByTagName("img")[0],{opacity:100},function()
-    {_this.doMove(_this.aSort[_this.iCenter].getElementsByTagName("img")[0],{opacity:100},function()
-    {_this.aSort[_this.iCenter].onmouseover=function()
-    {_this.doMove(this.getElementsByTagName("div")[0],{bottom:0})};_this.aSort[_this.iCenter].onmouseout=function()
-    {_this.doMove(this.getElementsByTagName("div")[0],{bottom:-100});}})})});}
-    else
-    {this.css(this.aSort[i],"display","none");this.css(this.aSort[i],"width",0);this.css(this.aSort[i],"height",0);this.css(this.aSort[i],"top",152);this.css(this.aSort[i],"left",this.oUl.offsetWidth/2)}
-        if(i<this.iCenter||i>this.iCenter)
-        {this.css(this.aSort[i].getElementsByTagName("img")[0],"opacity",30)
-            this.aSort[i].onmouseover=function()
-            {_this.doMove(this.getElementsByTagName("img")[0],{opacity:100})};this.aSort[i].onmouseout=function()
-        {_this.doMove(this.getElementsByTagName("img")[0],{opacity:35})};this.aSort[i].onmouseout();}
-        else
-        {this.aSort[i].onmouseover=this.aSort[i].onmouseout=null}}},addEvent:function(oElement,sEventType,fnHandler)
-    {return oElement.addEventListener?oElement.addEventListener(sEventType,fnHandler,false):oElement.attachEvent("on"+sEventType,fnHandler)},css:function(oElement,attr,value)
-    {if(arguments.length==2)
-    {return oElement.currentStyle?oElement.currentStyle[attr]:getComputedStyle(oElement,null)[attr]}
-    else if(arguments.length==3)
-    {switch(attr)
-    {case"width":case"height":case"top":case"left":case"bottom":oElement.style[attr]=value+"px";break;default:oElement.style[attr]=value;break}}},doMove:function(oElement,oAttr,fnCallBack)
-    {var _this=this;clearInterval(oElement.timer);oElement.timer=setInterval(function()
-    {var bStop=true;for(var property in oAttr)
-    {var iCur=parseFloat(_this.css(oElement,property));property=="opacity"&&(iCur=parseInt(iCur.toFixed(2)*100));var iSpeed=(oAttr[property]-iCur)/5;iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);if(iCur!=oAttr[property])
-    {bStop=false;_this.css(oElement,property,iCur+iSpeed)}}
-        if(bStop)
-        {clearInterval(oElement.timer);fnCallBack&&fnCallBack.apply(_this,arguments)}},30)}};
+$(function(){
+    /*滚动事件*/
+    $(window).scroll(function(){
+        var topp = $(document).scrollTop();
+        if(topp>20){
+            $('.bar').addClass('bar-active');
+            $('.bc-h').css({"background": "url('http://127.0.0.1:3000/img/index/logo2.png') no-repeat","background-size":"cover"});
+            $('.btn-a').css({"color":"#3385ff","border":"1px solid #3385ff"});
+            $('.bc-one').css({"color": "#717678"})
+        }else if(topp<20){
+            $('.bar').removeClass('bar-active');
+            $('.bc-h').removeAttr('style');
+            $('.btn-a').removeAttr('style');
+            $('.bc-one').removeAttr('style')
+        }
+    })
+    /*首页轮播图*/
+    $.ajax({
+        url:'http://127.0.0.1:3000/index/image',
+        tyep:'get',
+        dataType:'json',
+        success:function(res){            
+            var html='';
+            for(var p of res){
+                var {title,subtitle,img_url}=p;                           
+                html+=`<div class="carousel-item">
+                <img src="${img_url}" class="w-100">
+                <div class="carousel-caption m-auto">
+                    <h1>${title}</h1>
+                    <P class="font-large">${subtitle}</P>
+                </div>
+            </div>`            
+            }
+            var $div=$('#demo>.carousel-inner');
+            $div.html(html);
+            $('#demo>.carousel-inner>.carousel-item:first-child').addClass('active');
+        }
+    });
+    /*全版权运营*/
+    // $.ajax({
+    //     url:'http://127.0.0.1:3000/index/copyrightImage',
+    //     type:'get',
+    //     dataType:'json',
+    //     success:function(res){
+    //         console.log(res);
+    //         var html='';            
+    //         for(var p of res){
+    //             var {copyright_id,img_url}=p;                            
+    //             html+=`<li class='poster-item'><img src="${img_url}" class="yw-book-pic" data-id=${copyright_id} "/></li>`;  
+    //             $('.ywBookShow').html(html);                                        
+    //         };            
+    //     }       
+    // })
+    /*移动端*/    
+    $.ajax({
+        url:'http://127.0.0.1:3000/index/app',
+        type:'get',
+        data:{id:1},              
+        success:function(res){           
+            var id=1;             
+            var {logo,title,herf,img_url}=res[0];
+            var html=`<div class="yw-app-desc">
+            <h3 class="yw-app-slogon yw-slogon-qq"><img src="${logo}" /></h3>
+            <p class="yw-app-desc-detail">${title}</p>
+            <p><a href="${herf}" class="btn-aa">了解更多</a></p></div>
+            <div class="yw-app-img-x">
+            <img src="${img_url}" >
+            </div>`
+            $('#tabpanel1').html(html);
+            $('.tab-bg-line').css({transform:`translateX(${100*id-90}px)`,width:'80px'});                      
+        }
+    }) ;          
+    $('#floor-three>.tabApp').on('click','a.app-tab',function(){        
+        var $a=$(this);        
+        var id=$a.attr('data-app_id');
+        $.ajax({
+            url:'http://127.0.0.1:3000/index/app',
+            data:{id:id},
+            tyep:'get',
+            dataType:'json',
+            success:function(res){                
+                var {logo,title,herf,img_url}=res[0];
+                var html=`<div class="yw-app-desc">
+                <h3 class="yw-app-slogon yw-slogon-qq"><img src="${logo}" /></h3>
+                <p class="yw-app-desc-detail">${title}</p>
+                <p><a href="${herf}" class="btn-aa">了解更多</a></p></div>
+                <div class="yw-app-img-x">
+                <img src="${img_url}" >
+                </div>`
+                $('.app-mobile').hide();                
+                $(`#tabpanel${id}`).html(html).show();
+                $('.tab-bg-line').css({transform:`translateX(${100*id-90}px)`,width:'80px'});    
+            }
+        })   
+    });
+    /*旗下品牌*/
+    $.ajax({
+        url:'http://127.0.0.1:3000/index/brand',
+        type:'get',
+        dataType:'json',
+        success:function(res){            
+            var html='';
+            for(var p of res){
+                var {brand_id,title,href,img_url}=p;
+                html+=`<a href="${href}" target='_blank' title="${title}" class="brandNav-item">
+                <img src="${img_url}"  class="brand-img" data-index="${brand_id}" />
+                <h4 class="brand-h4">${title}</h4>
+            </a>`
+            }
+            $('#brandNavX').html(html); 
+        }
+    }).then(res=>{
+        $.ajax({
+            url:'http://127.0.0.1:3000/index/brandDetail',
+            type:'get',
+            dataType:'json',
+            success:function(res){            
+                var html='';
+                for(var p of res){
+                    var {brand_id,detail}=p;
+                    html+=`<li class="yw-brand-desc-li out''>
+                    <p class="brandDesc-p">${detail}</p>
+                    </li>`
+                }
+                $('#brandDescX').html(html);
+                $(`.yw-brand-desc-li:eq(0)`).removeClass('out').addClass('in');
+            }
+         }).then(res=>{
+            $('#brandNavX>.brandNav-item>.brand-img').mouseover(function(){            
+                var $img=$(this);            
+                var id=$img.attr('data-index');
+                $('.yw-brand-desc-li').each(function(){
+                    if($(this).hasClass('in')){
+                        $(this).removeClass('in').addClass('out')
+                    }
+                })              
+                $(`.yw-brand-desc-li:eq(${id-1})`).removeClass('out').addClass('in');
+                
+            })
+         })
+    })
+    /*新闻部分*/
+    $.ajax({
+        url:'http://127.0.0.1:3000/index/news',
+        type:'get',
+        dataType:'json',
+        success:function(res){
+            console.log(res)
+            var arr=res.slice(0,2);
+            console.log(arr)
+            var html='';
+            for(var p of res){
+                var {news_id,title,ntime,detail,img_url}=p;
+                html+=`<div class="news-item">
+                <a href="#" class="news-img"><img src="${img_url}" /></a>
+                <div class="news-msg">
+                    <h5 class="news-title"><a href="#">${title}</a></h5>
+                    <div class="news-time"><span>${ntime}</span></div>
+                    <p class="news-subtitle">${detail}</p>
+                    <p class="news-more"><a href="#">阅读详情<i class="news-arr"></i></a></p>
+                </div>
+            </div>`
+            }
+            $('.news-content').html(html);
+        }
+    })
+    /*联系我们*/
+    $.ajax({
+        url:'http://127.0.0.1:3000/index/contact',
+        type:'get',
+        dataType:'json',
+        success:function(res){           
+            var res1=res.slice(0,4);            
+            var html1='';
+            for(var p of res1){
+                var {contact_id,title,cname,phone,email}=p;
+                html1+=`<ul class="cc-item" data-index='${contact_id}'>
+                        <li class="cc-desc">
+                        <p>${title}</p>
+                        <ul class="cc-con ">
+                        <li>${cname}</li>
+                        <li>${phone}</li>
+                        <li>${email}</li>
+                        </ul>
+                        </li>
+                        </ul>`
+            }
+            $('#cc1').html(html1);
+            var res2=res.slice(4,8);            
+            var html2='';
+            for(var p of res2){
+                var {contact_id,title,cname,phone,email}=p;
+                html2+=`<ul class="cc-item" data-index='${contact_id}'>
+                        <li class="cc-desc">
+                        <p>${title}</p>
+                        <ul class="cc-con ">
+                        <li>${cname}</li>
+                        <li>${phone}</li>
+                        <li>${email}</li>
+                        </ul>
+                        </li>
+                        </ul>`
+            }
+            $('#cc2').html(html2);
+            var res3=res.slice(8,10);            
+            var html3='';
+            for(var p of res3){
+                var {contact_id,title,cname,phone,email}=p;
+                html3+=`<ul class="cc-item" data-index='${contact_id}'>
+                        <li class="cc-desc">
+                        <p>${title}</p>
+                        <ul class="cc-con cheight">
+                        <li>${cname}</li>
+                        <li>${phone}</li>
+                        <li>${email}</li>
+                        </ul>
+                        </li>
+                        </ul>`
+            }
+            $('#cc3').html(html3);
+        }
+    }).then(res=>{  
+            console.log($('.cc-item'))      
+            $('.cc-item').mouseover(function(){ 
+                var id=$(this).attr('data-index');
+                console.log(id)                      
+              $('.cc-con').each(function(){
+                  if($(this).hasClass('cheight')){
+                      $(this).removeClass('cheight')
+                  }
+                 
+              })
+              console.log($(`.cc-con`))
+              console.log($(`.cc-con:eq(1)`))
+              $(`.cc-con:eq(${id-1})`).addClass('cheight')
+            })
+            
+        })
+})
 
