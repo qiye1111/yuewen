@@ -1,0 +1,85 @@
+/* 导航栏 */
+*{
+    margin:0;padding:0;
+}
+ol,ul{list-style: none}
+a{text-decoration: none !important}
+body{
+    font-family: 'pingfang sc','microsoft yahei';
+    background:#ddd;
+}
+.bar{
+    color: #fff;    
+}
+.bar-body{
+    width: 1220px;
+    margin: 0 auto;
+}
+.bar-content{
+    position: relative;
+    z-index: 1;
+}
+.bc-h{
+    position: absolute;
+    top: 22px;
+    width: 138px;
+    height: 35px;    
+    background: url('http://127.0.0.1:3000/img/index/logo2.png') no-repeat;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    z-index: 1;
+    background-size: cover;
+}
+.bc-h h1{
+    position: absolute;
+    top: -100px;
+}
+.bc-one{
+    position: absolute;
+    top: 0;
+    right: 256px;
+    font-size: 0;
+    color: #fff; 
+}
+.bc-item{
+    display: inline-block;
+    line-height: 74px;
+    padding: 0 20px;
+    font-size: 14px;
+    letter-spacing: 0;
+    transition: all .25s;
+    margin-left: 32px;
+}
+.bc-two{
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.btn-a{
+    color: currentColor;
+    padding: 10px 15px;
+    line-height: 1;
+    display: inline-block;
+    border: 1px solid #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.08);
+    border-radius: 2px;
+    margin-left: 16px;
+    font-size: 14px;
+    transition: all .25s;
+}
+.btn-b{
+    color: #3385ff;
+    background-color: #fff;
+}
+.active{
+    height: 75px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-bottom: 1px solid #eee;
+    color: #717678;
+    background-color: #fff;
+    z-index: 2;
+    transition: all .25s;
+}

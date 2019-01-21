@@ -1,0 +1,445 @@
+*{margin:0;padding:0}
+body{
+    font-size: 14px;
+    font-family: Lato,'Helvetica Neue','PingFang SC','Myriad Pro','Hiragino Sans GB','microsoft yahei';
+    line-height: 1.5;
+    color: #202425;
+    min-width: 1280px;
+}
+ul,ol{
+    list-style: none;
+}
+a{text-decoration:none !important;}
+/*导航栏样式*/
+#bar{
+    width:1220px;
+    margin:0 auto;
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+#bar::before{
+    content:'';
+    display: table;
+}
+.logo{
+    padding: 10px 0;
+    position: absolute;
+    width: 166px;
+    height: 36px;
+    left: 0;
+    top: 0;
+    zoom: .96;
+}
+.barTab{
+    width:442px;
+    position: absolute;
+    right: 410px;
+    top: 20px;
+    z-index: 2;
+    max-width:95%;
+}
+.barTab-a{
+    display: flex;
+    justify-content: space-between;
+}
+.barTab-item{
+    padding-bottom: 10px;
+    font-size: 14px;
+    transition: color .25s;
+    transition-duration: .2s;
+    color: #717678;
+}
+.tabLine{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 3px solid #3385ff;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    width: 51px;
+    transform: translateX(0px);
+}
+.line-bg{
+    width: 99.8%;
+    height: 1px;
+    vertical-align: bottom;
+    background-color: #bcc1cc;
+    opacity: .5;
+    position: relative;
+    top: -1px;
+}
+.return{
+    color: #3385ff;
+    font-size: 14px;
+    border: 1px solid #3385ff;
+    padding: 8px 16px;
+    position: absolute;
+    right: 0;
+    border-radius: 2px;
+    top: 20px;
+}
+/*顶部样式*/
+#Header{
+    position: relative;
+    z-index:1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height:640px;
+    color: #0963eb;
+    background-color: #f8fcff;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom,#f4faff,#fbfdff)
+}
+.Header-in-box{
+    width: 1920px;
+    margin: 0 auto;
+    position: relative;
+}
+.app-square{
+    width: 440px;
+    height: 440px;
+    border-radius: 70px;
+    background-image: linear-gradient(to right,rgba(9,99,235,0),rgba(9,99,235,.04));
+    position: absolute;
+    left: -10px;
+    top: -110px;
+    transform: rotate(-57deg);
+    animation: rotate 150s linear infinite;
+}
+.app-circle{
+    width: 600px;
+    height: 600px;
+    box-sizing: border-box;
+    border: 80px solid currentColor;
+    border-radius: 50%;
+    right: 400px;
+    top: -400px;
+    position: absolute;
+    opacity: .04;
+    animation: down 10s linear infinite;
+}
+.app-wave-left,.app-wave-right{
+    width: 150%;
+    height: 104px;
+    position: absolute;
+    bottom: -15px;
+    background-repeat: repeat no-repeat;
+    transform-origin: center bottom;
+    background-image: url('http://127.0.0.1:3000/img/app/wave-1.png');
+}
+.app-wave-left{
+    animation: wave 40s linear infinite;
+    margin-left: -120px;
+}
+.Header-app-desc{
+    position: relative;
+    z-index:1;
+    margin:0 auto;
+    display: block;
+    top: 165px;
+    height: 385px;
+    color: #3e4652;
+    width: 1220px;
+    text-align: left;
+}
+.Header-h3{
+    font-family: SYSTC;
+    font-size:56px;
+    text-align: left;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+.Header-p{
+    font-size: 24px;
+    padding-bottom: 0;
+    line-height: 36px;
+    font-weight: 300;
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: .35s;
+}
+.Header-down{
+    margin-top: 32px;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: .7s;
+    height:50px;
+}
+.Header-down-a{
+    width: 144px;
+    display: inline-block;
+    padding: 15px 15px 16px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #464d5c;
+    font-size: 16px;
+    color: #fff;
+    margin-right:20px;
+}
+a.Header-down-a img{
+    width: 15px;
+    height: 18px;
+    vertical-align: -2px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.qr-box{
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 16px;
+    vertical-align: bottom;
+    margin-left: 15px;
+}
+.load-pic{
+    width: 136px;
+    height: 143px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -68px;
+    position: absolute;
+    top:-143px;
+}
+.load-pic img{
+    width: 136px;
+    height: 143px;
+}
+.qr-icon{
+    width: 48px;
+    height: 48px;
+    border: 1px solid #585e6c;
+    display: block;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+.qr-icon-pic{
+    width: 16px;
+    height: 16px;
+    background: url(../public/img/qr-icon.png) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.Header-img{
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: -100px;
+    animation: fadeInRight 1s ease-in-out forwards;
+}
+.Header-img img{
+    position: relative;
+    left: 140px;
+    width: 808px;
+    height: 560px;
+}
+/*主体部分*/
+#Body{
+    padding: 20px 0;
+}
+.Body-content{
+    width: 1220px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.Bc-h3{
+    margin:0 auto;
+    margin-top: 40px;
+    width:203px;
+    display: block;
+    height: 88px;
+    position: relative;
+    left: -26px;
+}
+.Bc-p{
+    width: 688px;
+    text-align: center;
+    color: #3e4652;
+    margin: 40px auto 40px;
+    font-size: 18px;
+    text-shadow: 0 1px #fff;
+    line-height: 1.8;
+    position: relative;
+    font-weight: 300;
+}
+.Bc-p::before{
+    content: url(../public/img/arr-left.png);
+    width: 52px;
+    height: 44px;
+    position: absolute;
+    overflow: hidden;
+    left: -100px;
+    top: 20px;
+}
+.Bc-p::after{
+    content: url(../public/img/arr-right.png);
+    width: 52px;
+    height: 44px;
+    position: absolute;
+    overflow: hidden;
+    right: -80px;
+    top: 20px;
+    background-position: -52px 0;
+}
+.Bc-i{
+    display: block;
+    width: 120px;
+    height: 1px;
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+}
+.Bc-i::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d3dce0;
+    top: -80px;
+}
+.Bc-desc{
+    position: absolute;
+    width:1220px;
+    display: flex;
+    justify-content: space-around;
+}
+.Bc-desc-item{
+    display: inline-block;
+    vertical-align: top;
+    width: 280px;
+    line-height: 1.3;
+    text-align: center;
+    margin-top:-140px;
+    transform: translate3d(0,100%,0);
+}
+.Bc-desc-item img{
+    width: 170px;
+    height: 90px;
+    display: block;
+    margin: 0 auto;
+}
+.Bc-desc-item h4{
+    font-size: 16px;
+    margin: 25px 0 10px;
+    color: #3385ff;
+}
+.Bc-desc-item p{
+    line-height: 20px;
+    font-size: 14px;
+    color: #78848f;
+}
+/*联系我们*/
+#contact{
+    background-color: #242a31;
+    color: #fff;
+    height: 428px;
+    overflow: hidden;
+    position: relative;
+    top:350px;
+}
+#contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../public/img/bg2.png');
+    background-repeat: repeat-x;
+    background-color: #242a31;
+    width: 100%;
+    height: 428px;
+}
+.contact-contr{
+    width:1220px;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top:50px;
+
+}
+.contact-left{
+    width:10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contact-left .cl-logo{
+    background:url("../public/img/logo.png");
+    width: 134px;
+    height: 40px;
+    background-size: cover;
+    display: block;
+    margin-bottom:10%;
+}
+.contact-center{
+    width:60%;
+}
+.contact-content{
+    display: flex;
+    justify-content: space-around;
+}
+.cc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size:14px;
+}
+.cc-active{height:72px !important;}
+.cc ul.cc-con{
+    height: 0;
+    overflow: hidden;
+    transition: all .4s;
+    margin-top: 13px;
+}
+.contact-right{
+    width:10%;
+}
+/*底部样式*/
+/* 页面底部的样式 */
+.footer{
+    background:#191e22;
+    position: relative;
+    top:350px;
+
+}
+.footer .footer-left{
+    display: flex;
+    color:#fff;
+    flex-direction: column;
+    justify-content: center;
+    padding-left:10%;
+}
+.footer .footer-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .footer-right img{
+    width:60%;
+    height:50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

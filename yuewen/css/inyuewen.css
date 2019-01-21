@@ -1,0 +1,330 @@
+/*������*/
+ *{
+    margin:0;padding:0;
+}
+ol,ul{list-style: none}
+a{text-decoration: none !important;color: inherit;}
+body{
+    font-family: 'pingfang sc','microsoft yahei';
+}
+.bar{
+    color: #fff;
+}
+.bar-body{
+    width: 1220px;
+    margin: 0 auto;
+}
+.bar-content{
+    position: relative;
+    z-index: 5;
+}
+.bc-h{
+    position: absolute;
+    top: 22px;
+    width: 138px;
+    height: 35px;    
+    background: url('http://127.0.0.1:3000/img/index/logo1.png') no-repeat;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    z-index: 3;
+    background-size: cover;
+}
+.bc-h h1{
+    position: absolute;
+    top: -100px;
+}
+.bc-one{
+    position: absolute;
+    top: 0;
+    right: 256px;
+    font-size: 0;
+    color: #fff; 
+}
+.bc-one:hover{
+    box-shadow: 0 1px #fff, 0 2px #fff, 0 3px #fff;
+    background-color: hsla(0,0%,100%,.25);
+}
+.bc-item{
+    display: inline-block;
+    line-height: 74px;
+    padding: 0 20px;
+    font-size: 14px;
+    letter-spacing: 0;
+    transition: all .25s;
+    margin-left: 32px;
+}
+.bc-two{
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.btn-a{
+    color: currentColor;
+    padding: 10px 15px;
+    line-height: 1;
+    display: inline-block;
+    border: 1px solid #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.08);
+    border-radius: 2px;
+    margin-left: 16px;
+    font-size: 14px;
+    transition: all .25s;
+}
+.btn-b{
+    color: #3385ff;
+    background-color: #fff;
+}
+.bar-active{
+    height: 75px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-bottom: 1px solid #eee;
+    color: #717678 !important;
+    background-color: #fff;
+    z-index: 5;
+    transition: all .25s;
+} 
+/*头部图片*/
+.iy-header{
+    height:720px;
+    position: relative;
+    background:url('http://127.0.0.1:3000/img/inyuewen/banner3.1.jpg') no-repeat;   
+}
+.iyh-title{
+    position:absolute;
+    top:167px;
+    width:100%;
+    margin:0 auto;    
+    color:#fff;
+    text-align: center;
+}
+.iy-header .iyh-title .iyh-h{
+    font-size:64px;
+    font-family: SHSCSB;
+    font-weight:bold;    
+}
+.iy-header .iyh-title .iyh-p{
+    font-size:28px;
+}
+.iy-video{
+    position:absolute;
+    width:100%;
+    text-align: center;
+    top:350px;
+}
+.iy-video img{
+    width:992px;;
+    height:560px;
+}
+/*阅文文化*/
+.iy-culture{
+    margin-top:20%;
+    margin-bottom:3%;
+}
+.iy-culture .col-sm-12{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.iy-culture .col-sm-12 .iyc-h{
+    font-family: SHSCB;
+    font-size: 36px;
+    color: #243c52;
+    padding-bottom:5%;
+}
+.iy-culture .col-sm-12 .iyc-p{
+    font-size: 20px;
+    color: #78848f;
+    text-align: center;
+    margin-bottom: 1%;
+    display: block;
+}
+.iy-culture .iyc-history{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.iy-culture .iyc-history .iyc-history-item{
+    width:20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iy-culture .iyc-history .iyc-history-item img{
+    width:50%;
+    height:50%;
+}
+.iy-culture .iyc-history .iyc-history-item .iyc-hi{
+    width:75%;
+}
+.iy-culture .iyc-history .iyc-history-item .iyc-hi .iyc-hi-title{
+    font-size: 22px;
+    color: #243c52;
+    font-weight: 500;
+    text-align: center;
+}
+.iy-culture .iyc-history .iyc-history-item .iyc-hi .iyc-hi-subtitle{
+    color: #78848f;
+}
+/*��������*/
+.iy-work{
+    width:100%;
+    background:#3080ff;
+}
+.iy-work .carousel .carousel-inner .carousel-item img{
+    width: 100%;
+    height:40%;
+    padding:0;
+}
+.iy-work .row .col-md-5{
+    background:#3080ff;
+    color:#fff;
+}
+.iy-work .row .col-md-5 .nav-pills a{
+    color:rgba(255,255,255,.6);
+    font-size:20px;
+}
+.iy-work .row .col-md-5 .nav-pills a:hover{
+    color:rgba(255,255,255,1);
+    font-size:20px;
+}
+.nav-pills .nav-link.active{
+    background:transparent;
+}
+.iy-work .row .col-md-5 ul{
+    list-style: none;
+}
+.iy-work .row .col-md-5 ul.nav-pills{
+    margin-bottom:2%;
+}
+.iy-work .row .col-md-5 ul li{
+    margin-bottom:4%;
+}
+#demo3 img{
+    width:100%;
+    height:40%;
+}
+/*培训*/
+.iy-training{
+    margin-top:3%;
+    font-family:SHSCB ;
+    color: #243c52;
+}
+.iy-training h1{
+    font-size:36px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom:3%;
+}
+.iy-training .iyt-item{
+    width:80%;
+    height:88%;
+    border-radius: 4px;
+    margin:0 auto;
+    box-shadow: 0 8px 32px #d9d9d9;
+}
+.iy-training .iyt-item img{
+    width:100%;
+}
+.iy-training .iyt-item .iyt-item-i{
+    padding:0 2%;
+    text-align: center;
+}
+.iy-training .iyt-item .iyt-item-i .iyt-title{
+    font-size: 22px;
+    color: #243c52;
+    padding:2% 2%;
+    margin-top:15%;
+    font-weight: bold;
+}
+.iy-training .iyt-item .iyt-item-i .iyt-int{
+    text-align: justify;
+    font-weight: 300;
+    padding:5% 10%;
+    padding-bottom:30%;
+}
+/*��Ƹ��λ*/
+.iy-position{
+    background:linear-gradient(to bottom,#3a90ff,#2b79ff);
+    width:100%;
+    height:30%;
+    margin-top:5%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom:2%;
+}
+.iy-position .iy-p-l{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#fff;
+}
+.iy-position .iy-p-r{
+    display: flex;
+}
+.iy-position .iy-p-r img{
+  padding:3% 0%;
+    width:25%;
+    height:100%;
+}
+.iy-position .iy-p-r ul{
+    list-style: none;
+    margin-left:8%;
+}
+.iy-position .iy-p-r ul li{
+    width:125%;
+    border:1px solid #fff;
+    text-align: center;
+    margin-top:25%;
+}
+.iy-position .iy-p-r ul li a{
+    color:#fff;
+    font-weight: bold;
+    padding:2% 3%;
+    text-decoration: none;
+}
+.iy-position .iy-p-r ul li:hover{
+    background:#fff;
+}
+.iy-position .iy-p-r ul li a:hover{
+    color:#3a90ff;
+}
+/*�Ų���ʽ*/
+.footer{
+    background:#191e22;
+}
+.footer .footer-left{
+    display: flex;
+    color:#fff;
+    flex-direction: column;
+    justify-content: center;
+    padding-left:10%;
+}
+.footer .footer-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .footer-right img{
+    width:60%;
+    height:50%;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

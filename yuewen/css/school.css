@@ -1,0 +1,459 @@
+*{
+    margin:0;padding:0;
+}
+ol,ul{list-style: none}
+a{text-decoration: none !important;color: inherit;}
+body{
+    font-family: 'pingfang sc','microsoft yahei';
+}
+.bar{
+    color: #fff;    
+}
+.bar-body{
+    width: 1220px;
+    margin: 0 auto;
+}
+.bar-content{
+    position: relative;
+    z-index: 5;
+}
+.bc-h{
+    position: absolute;
+    top: 22px;
+    width: 138px;
+    height: 35px;    
+    background: url('http://127.0.0.1:3000/img/index/logo1.png') no-repeat;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    z-index: 1;
+    background-size: cover;
+}
+.bc-h h1{
+    position: absolute;
+    top: -100px;
+}
+.bc-one{
+    position: absolute;
+    top: 0;
+    right: 256px;
+    font-size: 0;
+    color: #fff; 
+}
+.bc-one:hover{
+    box-shadow: 0 1px #fff, 0 2px #fff, 0 3px #fff;
+    background-color: hsla(0,0%,100%,.25);
+}
+.bc-item{
+    display: inline-block;
+    line-height: 74px;
+    padding: 0 20px;
+    font-size: 14px;
+    letter-spacing: 0;
+    transition: all .25s;
+    margin-left: 32px;
+}
+.bc-two{
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.btn-a{
+    color: currentColor;
+    padding: 10px 15px;
+    line-height: 1;
+    display: inline-block;
+    border: 1px solid #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.08);
+    border-radius: 2px;
+    margin-left: 16px;
+    font-size: 14px;
+    transition: all .25s;
+}
+.btn-b{
+    color: #3385ff;
+    background-color: #fff;
+}
+.bar-active{
+    height: 75px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-bottom: 1px solid #eee;
+    color: #717678 !important;
+    background-color: #fff;
+    z-index: 5;
+    transition: all .25s;
+}
+/* 头部 */
+.s-header{
+    background-image: linear-gradient(to right,#f25631,#e83711);
+}
+.s-header .sh-left{
+   display:flex;
+   justify-content: center;
+}
+
+.s-header .sh-right{
+    padding-top:7%;
+}
+.sh-per{
+    height: 480px;
+    position: absolute;
+    left: 0;
+    opacity: 0;    
+}
+.pre-active{
+ opacity: 1;
+ animation: slideInRight .8s ease-in-out forwards;   
+}
+@keyframes slideInRight{
+    0%   {
+        transform:translate3d(50px,0,0);
+        opacity: 0;
+        visibility: visible;
+    }                      
+    100%{
+        transform:translate3d(0,0,0);
+        opacity: 1; 
+    }                                           
+}
+/*招聘流程*/
+.s-process{
+    background: #16151a;
+    display: flex;
+    height:20%;
+    position:relative;    
+}
+.sp-content{
+    width:1220px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.s-process .sp{
+    widows: 1220px;
+    display:inline-block;
+    list-style:none;
+    color:#fff;
+    font-size:18px;
+    font-weight: bold;
+    margin-bottom: 0;    
+}
+.s-process .sp .sp-item{
+    display: inline-block;
+    position: relative;
+    margin-right:55px;
+}
+.sp-item::after{
+    right: -50px;
+    position: absolute;
+    content: '';
+    background: url(../public/img/school-arr.png) no-repeat;
+    background-position: 0 0;
+    height: 61px;
+    width: 60px;
+    top: 20px;
+}
+.s-process .sp .sp-item{
+    padding:1% 0;
+    text-align: center;
+}
+.s-process .sp .sp-item .sp-item-title{
+    font-size:24px;
+}
+.s-process .sp0{
+    position: absolute;
+    top:20%;
+    right:10%;
+}
+.s-process .sp0 img {
+    display: inline-block;
+    width:170px;
+    height:60px;
+}
+.s-process .sp0 img:hover{
+    transform: translateY(-5px);
+    transition: transform .2s ease-in-out; 
+}
+/*校招*/
+.school-highlight{
+    height:1000px;
+    position:relative;
+    background:url("../public/img/join/school-personbig.png");
+}
+.s-hl-h2{
+    width: 204px;
+    height: 45px;
+    font-size: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 80px;
+    background:url("../public/img/join/school-mtitle1.png");
+}
+.s-hl{
+    width:1220px;
+    margin:0 auto;
+    padding: 0 0 100px;
+    overflow: hidden;
+    display: flex;
+}
+.one{
+    justify-content: space-between;
+    padding-top:200px;
+}
+.two{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.shl-carousel{
+    width: 500px;
+    height: 280px;
+    position: relative;
+    box-sizing: content-box;
+    border: 6px solid #16151a;
+    box-shadow: 6px 6px 0 #cdcccc;
+    margin-right: 40px;
+}
+.shl-carousel img{
+    width: 500px;
+    height: 280px;
+    display: block;
+    object-fit: cover;
+}
+.shl-caption{
+    font-size: 18px;
+    max-width: 580px;
+    overflow: hidden;
+}
+.shl-caption>h4{
+    font-size: 32px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+.shl-caption h4>i{
+    width: 62px;
+    height: 29px;
+    display: inline-block;
+}
+/*欢迎加入阅文部分*/
+.school-welcom{
+    height:680px;
+    position: relative;
+    background: url(http://127.0.0.1:3000/img/school/school-bw.jpg) no-repeat top right;
+}
+.sw-h3{
+    width: 287px;
+    height: 46px;
+    background:url("http://127.0.0.1:3000/img/school/school-mtitle2.png");
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 85px;
+    margin: 0 auto;
+    font-size: 0;   
+}
+.school-wel{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.7);
+    color: #fff;
+    text-align: center;
+}
+.sw-p{
+    margin: 0 auto;
+    padding: 150px 0 40px;
+    max-width: 900px;
+    line-height: 32px;
+}
+.sw{
+    display: flex;
+    justify-content: space-around;
+    text-align: justify;
+    line-height: 0;
+    width: 1220px;
+    margin: 0 auto;
+}
+.sw-item{
+    display: inline-block;
+    vertical-align: top;
+    width: 123px;
+    height: 123px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom,#fa6a47,#ed4621);
+    position: relative;
+    transition: all .2s;
+}
+.sw-item:hover{
+    background-image: linear-gradient(to top,#fa6a47,#ed4621);
+}
+.sw-item-a{
+    display: block;
+    height: 100%;
+    font-size: 24px;
+    text-align: center;
+    color:#fff;
+}
+.sw-item-a:hover{
+    color:#fff;
+}
+.sw-item-i{
+    width: 60px;
+    height: 66px;
+    display: block;
+    margin: 26px auto 70px;
+    /* background: url(http://127.0.0.1:3000/img/school/schoolg-icons-1.png) no-repeat; */
+}
+.sw-a{
+    width: 285px;
+    height: 72px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 80px;
+     background: url(http://127.0.0.1:3000/img/school/school-btn3.png) no-repeat; 
+    transition: transform .2s ease-in-out;
+}
+.sw-a:hover{
+    transform:translateY(-8px) ;
+    transition: transform .5s;
+}
+.school-msg{
+    width:1220px;
+    margin:0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.s-msg {
+    font-size: 0;
+    margin: 100px 50px 110px 0;
+    border: 6px solid #16151a;
+    box-shadow: 6px 6px 0 #cdcccc;
+    width: 778px;
+}
+.s-nav{
+    top: 95px;
+    right: 0;
+    position: absolute;
+    height:468px;
+}
+.s-nav .s-nav-item{
+    height: 80px;
+    padding: 16px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: all .25s;
+    box-sizing: content-box;
+}
+.s-nav-item:hover{
+    background:#f2f2f7;
+}
+.s-nav-item img{
+    width: 125px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+    transition: transform ease-out .2s;
+}
+.s-nav-item img:hover{
+    transform: scale(1.1,1.1);
+}
+.nav-msg{
+    overflow: hidden;
+    height:80px;
+}
+.nav-item-h4{
+    font-size: 18px;
+    color: #16151a;
+    transition: all .25s;
+    font-weight: bold;
+}
+.nav-item-h4:hover{
+    color:#e83812;
+}
+.nav-msg-p{
+    font-size: 12px;
+    color: #c1c1c1;
+    padding-top: 3px;
+}
+/*底部*/
+/* 页面底部的样式 */
+.footer{
+    background:#191e22;
+}
+.footer .footer-left{
+    display: flex;
+    color:#fff;
+    flex-direction: column;
+    justify-content: center;
+    padding-left:10%;
+}
+.footer .footer-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .footer-right img{
+    width:60%;
+    height:50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
